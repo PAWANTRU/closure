@@ -1,21 +1,17 @@
 function addTask() {
-  const input = document.getElementById('taskInput');
-  const taskText = input.value.trim();
-  if (taskText === '') return;
+  const taskInput = document.getElementById("taskInput");
+  const taskText = taskInput.value.trim();
 
-  const li = document.createElement('li');
-  const span = document.createElement('span');
-  span.textContent = taskText;
-  span.onclick = () => li.classList.toggle('completed');
+  if (taskText === "") return;
 
-  const del = document.createElement('span');
-  del.textContent = '❌';
-  del.className = 'delete-btn';
-  del.onclick = () => li.remove();
+  const li = document.createElement("li");
+  li.textContent = taskText;
 
-  li.appendChild(span);
-  li.appendChild(del);
+  // Add event listener to toggle completed status
+  li.addEventListener("click", function () {
+    li.classList.toggle("completed");
+  });
 
-  document.getElementById('taskList').appendChild(li);
-  input.value = '';
+  document.getElementById("taskList").appendChild(li);
+  taskInput.value = "";
 }

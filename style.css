@@ -66,3 +66,7 @@ li.completed span {
   color: red;
   cursor: pointer;
 }
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
